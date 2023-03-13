@@ -21,7 +21,7 @@ public class HelloWorldController {
   public String onlyChampion(Authentication authentication) {
       if (authentication != null && authentication.isAuthenticated()
               && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("CHAMPION"))) {
-          return "Avengers... Assemble";
+          return "redirect:/assemble.html";
       }
       return "redirect:/login";
   }
@@ -30,7 +30,7 @@ public class HelloWorldController {
   public String onlyDirector(Authentication authentication) {
       if (authentication != null && authentication.isAuthenticated()
               && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("DIRECTOR"))) {
-          return "Biarritz, Bordeaux, La Loupe, Lille, Lyon, Nantes, Orléans, Paris, Reims, Strasbourg, Toulouse";
+          return "redirect:/secret-bases.html";
       }
      else { return "redirect:/login";}
   }
